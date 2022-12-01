@@ -6,6 +6,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
 
+const { userRoutes, authRoutes } = require("./routes")
+
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
@@ -23,6 +25,8 @@ app.get("/", (req, res) => {
   res.status(200).json({message: "Bienvenido al server"})
 });
 
+app.use("/api/v1", userRoutes);
+app.use("/api/v1", authRoutes);
 app.use(handleError);
 
 module.exports = app;

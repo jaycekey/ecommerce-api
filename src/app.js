@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
 
-const { userRoutes, authRoutes } = require("./routes")
+const { userRoutes, authRoutes, productRoutes, cartRoutes } = require("./routes")
 
 app.use(express.json());
 app.use(morgan("dev"));
@@ -17,7 +17,7 @@ db.authenticate()
   .then(() => console.log("Autenticación exitosa"))
   .catch((error) => console.log(error));
 
-db.sync({ force: true }) // devuelve una promesa
+db.sync({ force: false }) // devuelve una promesa
   .then(() => console.log("Sincronizado correctamente"))
   .catch((error) => console.log(error));
 
@@ -27,6 +27,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1", userRoutes);
 app.use("/api/v1", authRoutes);
+app.use("/api/v1", productRoutes);
+app.use("/api/v1", cartRoutes);
 app.use(handleError);
 
 module.exports = app;

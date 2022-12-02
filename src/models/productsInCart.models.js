@@ -9,7 +9,7 @@ const ProductsInCart = db.define("products_in_cart",
       autoIncrement: true,
       allowNull: false,
     },
-    cartID: {
+    cartId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -18,7 +18,7 @@ const ProductsInCart = db.define("products_in_cart",
       },
       field: "cart_id",
     },
-    productID: {
+    productId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

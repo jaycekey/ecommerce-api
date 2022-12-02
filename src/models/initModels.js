@@ -15,7 +15,7 @@ const initModels = () => {
   Orders.belongsTo(Users, { foreignKey: "user_id" });
 
   Users.hasMany(Products, { foreignKey: "user_id" });
-  Products.belongsTo(Users, { foreignKey: "user_id" });
+  Products.belongsTo(Users, {as: "Seller", foreignKey: "user_id" });
 
   Products.hasMany(ProductsInCart, {foreignKey: "product_id"});
   ProductsInCart.belongsTo(Products, {foreignKey: "product_id"});

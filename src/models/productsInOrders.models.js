@@ -9,7 +9,7 @@ const ProductsInOrders = db.define("products_in_orders",
       autoIncrement: true,
       allowNull: false,
     },
-    orderID: {
+    orderId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -18,7 +18,7 @@ const ProductsInOrders = db.define("products_in_orders",
       },
       field: "order_id",
     },
-    productID: {
+    productId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

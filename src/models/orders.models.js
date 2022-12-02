@@ -10,7 +10,7 @@ const Orders = db.define("orders",
       allowNull: false,
       field: "order_id"
     },
-    userID: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

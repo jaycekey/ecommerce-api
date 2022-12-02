@@ -31,7 +31,7 @@ const Products = db.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userID: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
